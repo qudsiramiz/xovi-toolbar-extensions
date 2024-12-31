@@ -18,28 +18,36 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 
 ## How-To
 To enable the floating toolbars, use the menu in the toolbar
+===
 ![Menu](images/menu.png)
 
-### Quick-Tools 
+## Quick-Tools 
 Fully open(Toolbar visible)
+===
 ![QuickTools](images/Quicktoolsfull.png)
 
 Partially closed(Toolbar closed)
+===
 ![QuickTools](images/Quicktools.png)
 
 Fully minimised(Double tap the left-most icon)
+===
 ![hiding](images/hiding.gif)
 
 To add Tools
+===
 ![hiding](images/addingtools.gif)
 
 To anchor to the top
+===
 ![anchor](images/topanchor.gif)
 
-### Layers
+## Layers
 Layer-management floating toolbar
+===
 ![layers](images/Layers.png)
 
 ### Moving the toolbars
 Press and hold the left-most icon until it's highlighted. After which, press and drag the icon to move it around
+===
 ![moving](images/moving.gif)
