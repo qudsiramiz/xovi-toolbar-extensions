@@ -8,13 +8,14 @@ After which, copy the files to
 These QMDs were tested to work in 3.15/16 and 3.17. Please download the respective version of the simplified.qmd file for the versions. Any bugs should be reported in the repo issues. 
 
 
+
 ## Features
 
 - Allows adding any tool with a preset colour and thickness
 - Allows anchoring to the top of the screen
 - Can be placed anywhere in the screen
 - Can be minimised when not in use
-
+- NEW: Tool orders are persistent with restarts
 
 ## How-To
 #### To enable the floating toolbars, use the menu in the toolbar
@@ -35,6 +36,12 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 
 #### To anchor to the top
 ![anchor](images/topanchor.gif)
+
+#### To change tool order
+To change the tool order, press and hold on the tool buttons to show the arrows, and change the order using them
+![anchor](images/moveOrder.gif)
+
+
 
 ## Layers
 #### Layer-management floating toolbar
