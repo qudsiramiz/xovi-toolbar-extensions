@@ -22,6 +22,8 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 
 ## How-To
 #### To enable the floating toolbars, use the menu in the toolbar
+The preset option lets you have a preset of Quick-Tools tools
+ 
 ![Menu](images/menu.png)
 
 
