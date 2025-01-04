@@ -12,41 +12,52 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 ## Features
 
 - Allows adding any tool with a preset colour and thickness
-- Allows anchoring to the top of the screen
+- Allows changing the added tool order
 - Can be placed anywhere in the screen
 - Can be minimised when not in use
-- NEW: Tool orders are persistent with restarts
+- Snaps to the edges and horizontal/vertical center of the screen when moved
+- Config persists between restarts(Enabled state, position, tools list)
+- Floating Layers menu fully replaces system equivalent except for renaming the layer
+
 
 ## How-To
 #### To enable the floating toolbars, use the menu in the toolbar
 ![Menu](images/menu.png)
 
-## Quick-Tools 
-#### Fully open(Toolbar visible)
-![QuickTools](images/Quicktoolsfull.png)
 
+## Quick-Tools 
+
+### Moving the toolbars
+#### Press and hold the left-most icon until it's highlighted. After which, press and drag the icon to move it around
+![moving](images/quickMove.gif)
+
+#### Fully open(Toolbar visible)
+![QuickToolsFull](images/quicktoolsfull.png)
+
+#### Without tool order
+![anchor](images/quickTools.png)
+ 
 #### Partially closed(Toolbar closed)
-![QuickTools](images/Quicktools.png)
+![QuickToolsFS](images/quickToolsFS.png)
 
 #### Fully minimised(Double tap the left-most icon)
-![hiding](images/hiding.gif)
+![minimizing](images/quickMinimize.gif)
 
 #### To add Tools
-![hiding](images/addingtools.gif)
-
-#### To anchor to the top
-![anchor](images/topanchor.gif)
+![add](images/addingtools.gif)
 
 #### To change tool order
-To change the tool order, press and hold on the tool buttons to show the arrows, and change the order using them
-![anchor](images/moveOrder.gif)
+To change the tool order, press and hold on any tool button(s) to show the arrows, and change the order using them. Note: The arrows won't show up unless you have the base toolbar open.
+![order](images/quickOrderChange.gif)
 
 
 
 ## Layers
 #### Layer-management floating toolbar
-![layers](images/Layers.png)
+![layers](images/layers.png)
 
-### Moving the toolbars
-#### Press and hold the left-most icon until it's highlighted. After which, press and drag the icon to move it around
-![moving](images/moving.gif)
+#### Viewing Layer name
+Press and hold the layer number to view the corresponding layer name.
+![layers](images/layerName.gif)
+
+
