@@ -8,7 +8,7 @@ AFFECT [[2857280009207495592]]
 			property alias eraserMenus: ~&8399436595340057472&~
 			property bool floatbarQuick:~&6504329801&~
 			property bool floatbarQuickk:~&214625660372&~
-
+			property ~&197088788&~ presetNumber: 1
 		}
 		TRAVERSE [[7081293658967]]#[[1353514032786382195]]
 		LOCATE BEFORE [[14888501028015932088]]#[[10762473161189611321]]
@@ -53,6 +53,15 @@ AFFECT [[2857280009207495592]]
 							}
 						}
 						~&425121728314878811&~.~&432643201877711221&~ {
+							~&5972374&~: quickPresets
+							~&214632764553&~: "Preset "+ String(~&6504254477&~.presetNumber)
+							~&8399601734642709923&~: ~&"1888152859110688812&~
+							~&15640708674084664669&~: ~&6504254477&~.~&15640708674084664669&~
+							~&8400129127120172259&~: ~&6504329801&~
+							~&7081629735527&~.~&254529418434902000&~: ~&6504329801&~
+							~&254542236275632405&~: {~&6504254477&~.presetNumber = (~&6504254477&~.presetNumber == 3) ? 1 : (~&6504254477&~.presetNumber == 2 ? 3 : 2)}
+						}
+						~&425121728314878811&~.~&432643201877711221&~ {
 							~&214632764553&~: "Layers"
 							~&8399601734642709923&~: ~&"1888152859329366976&~
 							~&15640708674084664669&~: ~&6504254477&~.~&15640708674084664669&~
@@ -78,7 +87,6 @@ AFFECT [[2857280009207495592]]
 						}
 					}
 				}
-
 			}
 		END TRAVERSE
 		TRAVERSE [[7081293658967]]#[[1353514032786382195]] > [[14919350785992095439]]#[[16536698194431353583]]
@@ -362,7 +370,10 @@ AFFECT [[1224665461898798997]]
 				function moveToPosition(newX, newY) {
 					~&180993&~ = newX
 					~&180994&~ = newY
-				}
+				}					
+				property ~&197088788&~  presetState: ~&233745975898428&~.presetNumber
+				property bool quickToolOn: ~&233745975898428&~.floatbarQuickk
+				property bool layersOn: ~&233745975898428&~.floatbarEnabledLayers
 				property ~&197102514&~ quickTool: []
 				function addNewTool( toolId, toolRGB, toolPalette,toolThickness) {
 					quickTool.~&6504189257&~({
@@ -386,7 +397,7 @@ AFFECT [[1224665461898798997]]
 					~&7083121450889&~ ~&6504329801&~;
 				}
 				function saveQuickToolFile() {
-					~&197091758&~ xhr =          new          XMLHttpRequest();
+					~&197091758&~ xhr =            new            XMLHttpRequest();
 					~&197091758&~ ~&6503736259&~ = {
 						quickTool: quickTool,
 						isfloatQuickActive: ~&233745975898428&~.floatbarQuickk,
@@ -397,8 +408,11 @@ AFFECT [[1224665461898798997]]
 						quickPositionY: floatQuick.~&180994&~
 					};
 					~&197091758&~ dataStr = ~&6502785411&~.~&254548178208422824&~(~&6503736259&~);
-
-					xhr.~&6504147419&~("PUT", "file:///home/root/quickTool.json");
+					~&5972376&~ (presetState === 1){
+					xhr.~&6504147419&~("PUT", "file:///home/root/quickTool.json");}
+					~&6503784146&~ ~&5972376&~ (presetState === 2){
+					xhr.~&6504147419&~("PUT", "file:///home/root/quickTool2.json");}
+					~&6503784146&~ {xhr.~&6504147419&~("PUT", "file:///home/root/quickTool3.json");}
 					xhr.onreadystatechange = function() {
 						~&5972376&~ (xhr.readyState === XMLHttpRequest.DONE) {
 							~&233724020023100&~.~&197092075&~("Save completed");
@@ -407,8 +421,12 @@ AFFECT [[1224665461898798997]]
 					xhr.~&6504279475&~(dataStr);
 				}
 				function loadQuickToolFile() {
-					~&197091758&~ xhr =          new          XMLHttpRequest();
-					xhr.~&6504147419&~("GET", "file:///home/root/quickTool.json");
+					~&197091758&~ xhr =            new            XMLHttpRequest();
+					~&5972376&~ (presetState===1){
+					xhr.~&6504147419&~("GET", "file:///home/root/quickTool.json");}
+					~&6503784146&~ ~&5972376&~ (presetState===2){
+					xhr.~&6504147419&~("GET", "file:///home/root/quickTool2.json");}
+					~&6503784146&~ {xhr.~&6504147419&~("GET", "file:///home/root/quickTool3.json");}
 					xhr.onreadystatechange = function() {
 						~&5972376&~ (xhr.readyState === XMLHttpRequest.DONE) {
 							try {
@@ -434,9 +452,12 @@ AFFECT [[1224665461898798997]]
 				~&254480451320573660&~.~&495334332051582499&~: {
 					loadQuickToolFile();
 				}
+				onQuickToolOnChanged:{saveQuickToolFile();} 
+				onLayersOnChanged: {saveQuickToolFile();} 
+				onPresetStateChanged: {loadQuickToolFile();} 
 				 ~&214604601930&~ {
 					~&5972374&~: intervalTimer
-					~&7713147298280334&~: 30000 
+					~&7713147298280334&~: 10000 
 					~&7083121289162&~: ~&6504329801&~
 					~&233743626668842&~: ~&6504329801&~
 					~&495358363329399331&~: {
@@ -665,7 +686,7 @@ AFFECT [[1224665461898798997]]
 				}
 				~&425121728314878811&~.~&16765000136167945189&~.~&7081261925573&~ {
 					~&5972374&~: floatquickAdd
-					~&233748328658231&~: ~&233745975898428&~.floatbarQuick && !~&15793094956877902211&~.~&8399487686344347164&~
+					~&233748328658231&~: ~&233745975898428&~.floatbarQuick && !~&15793094956877902211&~.~&8399487686344347164&~ && !floatQuick.moveTool
 					~&481641799955318521&~: ~&5971598&~.~&233696851602406&~
 					~&6504337259&~: floatQuick.~&6504337259&~
 					~&8399601734642709923&~: ~&"5724976033632521381&~ 
@@ -678,7 +699,7 @@ AFFECT [[1224665461898798997]]
 				}
 				~&425121728314878811&~.~&16765000136167945189&~.~&7081261925573&~ {
 					~&5972374&~: floatquickRemove
-					~&233748328658231&~: ~&233745975898428&~.floatbarQuick && !~&15793094956877902211&~.~&8399487686344347164&~
+					~&233748328658231&~: ~&233745975898428&~.floatbarQuick && !~&15793094956877902211&~.~&8399487686344347164&~ && !floatQuick.moveTool
 					~&481641799955318521&~: ~&5971598&~.~&233696851602406&~
 					~&6504337259&~: floatQuick.~&6504337259&~
 					~&8399601734642709923&~:~&"8609872135902538553&~
