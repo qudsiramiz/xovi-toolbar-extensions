@@ -17,6 +17,7 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 - Can be minimised when not in use
 - Snaps to the edges and horizontal/vertical center of the screen when moved
 - Config persists between restarts(Enabled state, position, tools list)
+- 3 Presets of tools to change to
 - Floating Layers menu fully replaces system equivalent except for renaming the layer
 
 
