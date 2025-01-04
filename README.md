@@ -32,10 +32,10 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 ![moving](images/quickMove.gif)
 
 #### Fully open(Toolbar visible)
-![QuickToolsFull](images/quicktoolsfull.png)
+![QuickToolsFull](images/Quicktoolsfull.png)
 
 #### Without tool order
-![anchor](images/quickTools.png)
+![quickTools](images/Quicktools.png)
  
 #### Partially closed(Toolbar closed)
 ![QuickToolsFS](images/quickToolsFS.png)
@@ -48,16 +48,18 @@ These QMDs were tested to work in 3.15/16 and 3.17. Please download the respecti
 
 #### To change tool order
 To change the tool order, press and hold on any tool button(s) to show the arrows, and change the order using them. Note: The arrows won't show up unless you have the base toolbar open.
+
 ![order](images/quickOrderChange.gif)
 
 
 
 ## Layers
 #### Layer-management floating toolbar
-![layers](images/layers.png)
+![layers](images/Layers.png)
 
 #### Viewing Layer name
 Press and hold the layer number to view the corresponding layer name.
+
 ![layers](images/layerName.gif)
 
 
