@@ -34,7 +34,7 @@ you have downloaded the files to your `Downloads` directory.
   You will see three compressed files there. Download the file named `extensions.zip` and save it
   to your `Downloads` directory.
 
-- Download the `xovi-toolbar-extensions` from [here]([https](https://github.com/fouzR/xovi-toolbar-extensions).
+- Download the `xovi-toolbar-extensions` from [here](https://github.com/fouzR/xovi-toolbar-extensions).
   Once you are on the page, click on the green `Code` button and select `Download ZIP`. Save the
   downloaded file to your `Downloads` directory.
 
