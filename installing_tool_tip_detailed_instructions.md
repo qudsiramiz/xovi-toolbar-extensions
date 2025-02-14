@@ -128,7 +128,7 @@ Finally, restart `xovi` by running the following command:
 ```bash
   xovi/start
 ```
-
+https://github.com/hegzploit/xovi-toolbar-extensions
 You should see a new button above the pages icon. Tap the `Quick tools` toggle and start using it! Hit the `Reset floatbar` to center it on top.
 
 ## Using FileZilla to upload the files
@@ -176,7 +176,7 @@ the instructions below to upload the files to your RPP using `FileZilla`.
   
   killall xochitl
   
-  QMLDIFF_HASHTAB_CREATE=/home/root/xovi/exthome/qt-resource-rebuilder/hashtab xovi/debug
+  QMLDIFF_HASHTAB_CREATE=/home/root/xovi/exthome/qt-resource-rebuilder/hashtab /home/root/xovi/debug
 ```
 
 - After your RPP restarts, press `Ctrl + C` on your keyboard to exit the terminal. SSH back into
